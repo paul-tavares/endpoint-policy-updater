@@ -52,12 +52,16 @@ ${getSeparator()}
     // Perform the actions
     setOutputToStdout(userSelections.policy);
 
-
     // Save the policy
-    //console.log(JSON.stringify(userSelections.policy, null, 2));
     const updateResponse = await kibana.updateEndpointPolicy(userSelections.policy);
 
-    console.log(JSON.stringify(updateResponse, null, 4));
+    console.log(`
+Update done! Result:
+
+${JSON.stringify(updateResponse, null, 4)}
+
+${getSeparator()}
+`);
 };
 
 const getSeparator = () => '-------------------------------------------------------------------';
